@@ -1,0 +1,26 @@
+source_key: "./.ssh/id_rsa"
+dest_key: "{{ lookup('env', 'HOME') }}/.ssh/id_rsa"
+personal: "{{ lookup('env', 'HOME') }}/personal"
+work: "{{ lookup('env', 'HOME') }}/work"
+github_work_org: !vault |
+          $ANSIBLE_VAULT;1.1;AES256
+          30643334346330343534613239656261336434646130373363613032393164616331373333386638
+          6161323561613731326332306139626261346434663866340a366430343731636235363736633738
+          63353930366332613530323031646336313665363039656165333864386561363665663431383935
+          3336313132363863610a393138383265663435633338623063663938343239623362316636323736
+          31333438666532623637383631353932323363663466626437383331663531333066
+repositories:
+  - name: "storm-terraform"
+    branches:
+      - "main"
+      - "chore/cleanup-old-aks-folder"
+  - name: "storm-rfcs"
+    branches:
+      - "main"
+      - "feature/powershell"
+  - name: "storm-automation"
+    branches:
+      - "main"
+  - name: "storm-workflows"
+    branches:
+      - "main"

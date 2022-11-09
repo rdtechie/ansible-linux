@@ -1,0 +1,2 @@
+#!/bin/bash
+ansible-playbook --ask-vault-password -K local.yaml

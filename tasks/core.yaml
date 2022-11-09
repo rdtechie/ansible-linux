@@ -1,0 +1,66 @@
+- name: Install System Packages 1 (build-essential, cmake, pkg-config, pthread)
+  become: true
+  ansible.builtin.apt:
+    pkg:
+    - build-essential
+    - libpthread-stubs0-dev
+    - ninja-build
+    - gettext
+    - libtool
+    - libtool-bin
+    - autoconf
+    - automake
+    - cmake
+    - pkg-config
+    - unzip
+    - curl
+    - doxygen
+    - lua5.4
+  tags:
+    - install
+    - neovim
+    - core
+
+- name: Install System Packages 2 (the rest)
+  become: true
+  ansible.builtin.apt:
+    pkg:
+    - compton
+    - htop # Improved top
+    - golang
+    - lsof # List Open Files
+    - i3 # Window Manager
+    - ccache # Compiler Cache
+    - python3-pip
+    - dconf-editor # DConf is a low-level key/value database designed for storing desktop environment settings.
+    - moreutils
+    - mate-desktop
+    - mate-desktop-environment-extras
+    - ubuntu-mate-themes
+    - clang
+    - clangd
+    - tmux
+    - wireshark
+    - gimp
+    - screenkey
+    - xclip
+    - fzf
+    - gimp
+    - ripgrep
+    - stow
+  tags:
+    - install
+    - core
+
+- name: dconf i3
+  shell: dconf write /org/mate/desktop/session/required-components/windowmanager "'i3'"
+  tags:
+    - install
+    - core
+
+- name: dconf i3
+  shell: dconf write /org/mate/desktop/background/show-desktop-icons "false"
+  tags:
+    - install
+    - core
+

@@ -1,0 +1,31 @@
+- name: Git Setup Personal Email
+  git_config:
+    name: user.email
+    scope: global
+    value: "rdiphoorn@outlook.com"
+  tags:
+  - git-personal
+
+- name: Git Setup Personal Name
+  git_config:
+    name: user.name
+    scope: global
+    value: "rdtechie"
+  tags:
+  - git-personal
+
+- name: Git Setup Work Email
+  git_config:
+    name: user.email
+    scope: global
+    value: "richard.diphoorn@ah.nl"
+  tags:
+  - git-rad
+
+- name: Git Setup Work Name
+  git_config:
+    name: user.name
+    scope: global
+    value: "rdtechie"
+  tags:
+  - git-rad
